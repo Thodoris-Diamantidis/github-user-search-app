@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function SearchBar() {
+export default function SearchBar({ setGithubUser, fetchData }) {
   const [searchInput, setSearchInput] = useState("");
 
   return (
@@ -13,9 +13,10 @@ export default function SearchBar() {
           onChange={(event) => {
             event.preventDefault();
             setSearchInput(event.target.value);
+            setGithubUser(event.target.value);
           }}
         />
-        <button>Search</button>
+        <button onClick={fetchData}>Search</button>
       </div>
     </div>
   );
