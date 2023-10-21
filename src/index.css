@@ -1,3 +1,20 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --clr-white-100: hsl(0, 0%, 100%);
+  /* Dark theme Colors */
+  --clr-dark-primary-blue-500: hsl(212, 100%, 50%);
+  --clr-dark-primary-grey-800: hsl(220, 40%, 13%);
+  --clr-dark-primary-grey-500: hsl(222, 41%, 20%);
+
+  /* Font Family */
+  --ff-base: "Space Mono", sans-serif;
+
+  /* Font Weight */
+  --fw-reg: 400;
+  --fw-bold: 700;
+}
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -65,4 +82,219 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* Utilities */
+.align-left {
+  text-align: left;
+  text-align: top;
+}
+
+/* General Styling */
+body {
+  background-color: var(--clr-dark-primary-grey-800);
+  color: var(--clr-white-100);
+
+  font-family: var(--ff-base);
+  font-weight: var(--fw-reg);
+  font-size: 15px;
+  line-height: 25px;
+
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  margin: 24px;
+}
+
+h1 {
+  font-weight: var(--fw-bold);
+  font-size: 26px;
+}
+
+h3 {
+  font-weight: var(--fw-reg);
+  font-size: 13px;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-weight: var(--fw-bold);
+    font-size: 26px;
+    line-height: 38px;
+  }
+
+  h2 {
+    font-weight: var(--fw-bold);
+    font-size: 22px;
+    line-height: 33px;
+  }
+
+  h3 {
+    font-weight: var(--fw-reg);
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  h4 {
+    font-weight: var(--fw-reg);
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.github {
+  --content-padding: 1rem;
+  max-width: 327px;
+}
+
+@media (min-width: 600px) {
+  .github {
+    max-width: 600px;
+  }
+}
+
+.github__heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn__theme {
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+  font-weight: var(--fw-bold);
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  color: var(--clr-white-100);
+
+  display: flex;
+  gap: 16px;
+}
+
+.github__searchbar {
+  margin-top: 36px;
+  margin-bottom: 16px;
+  background-color: var(--clr-dark-primary-grey-500);
+  border-radius: 0.5rem;
+}
+
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Input takes up all available space, button is auto-sized */
+  gap: 8px; /* Adjust as needed for spacing between input and button */
+}
+
+.input-container input[type="text"] {
+  background-color: var(--clr-dark-primary-grey-500);
+  color: var(--clr-white-100);
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  padding: 10px 0px 10px 40px;
+  border-radius: 0.5rem;
+  background-image: url("./assets/icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  width: 100%; /* Input takes up all available space */
+}
+
+.input-container button {
+  background-color: var(--clr-dark-primary-blue-500);
+  border: none;
+  outline: none;
+  font-size: 13px;
+  padding: 0px 10px;
+  margin: 5px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.github__details {
+  padding: var(--content-padding);
+  background-color: var(--clr-dark-primary-grey-500);
+  border-radius: 1rem;
+}
+
+.github__user {
+  display: flex;
+  gap: 19.5px;
+}
+
+.github__profile {
+  width: 70px;
+  height: 70px;
+}
+
+@media (min-width: 600px) {
+  .github__profile {
+    width: 117px;
+    height: 117px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .github__profile {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+.github__status {
+  margin-top: 33px;
+}
+
+/* github_stats Styling */
+.github__stats {
+  background-color: var(--clr-dark-primary-grey-800);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 1rem;
+  margin-top: 23px;
+}
+
+.github__stats > p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.github__stats > p > span:first-of-type {
+  font-size: 11px;
+}
+
+.github__stats > p > span:nth-of-type(2) {
+  font-size: 16px;
+  font-weight: var(--fw-bold);
+}
+
+.github__links {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+@media (min-width: 600px) {
+  .github__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.github__link {
+  display: flex;
+  align-items: center;
+}
+
+.github__link > a {
+  color: var(--clr-white-100);
+  text-decoration: none;
+}
+
+.github__link > svg {
+  margin-right: 19px;
 }
